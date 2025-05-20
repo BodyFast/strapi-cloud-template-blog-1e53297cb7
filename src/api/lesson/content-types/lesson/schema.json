@@ -1,0 +1,17 @@
+{
+  "kind": "singleType",
+  "collectionName": "lessons",
+  "info": {
+    "singularName": "lesson",
+    "pluralName": "lessons",
+    "displayName": "Lesson"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "lessoncontent": {
+      "type": "blocks"
+    }
+  }
+}

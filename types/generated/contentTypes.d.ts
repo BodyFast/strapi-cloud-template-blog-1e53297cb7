@@ -553,6 +553,7 @@ export interface ApiModuleModule extends Struct.CollectionTypeSchema {
     quiz: Schema.Attribute.Relation<'oneToOne', 'api::quiz.quiz'>;
     recipes: Schema.Attribute.Relation<'oneToMany', 'api::recipe.recipe'>;
     title: Schema.Attribute.String;
+    unlockAfterDays: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<7>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

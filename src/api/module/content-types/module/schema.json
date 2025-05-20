@@ -46,6 +46,10 @@
       "relation": "oneToMany",
       "target": "api::worksheet.worksheet",
       "mappedBy": "module"
+    },
+    "unlockAfterDays": {
+      "type": "integer",
+      "default": 7
     }
   }
 }

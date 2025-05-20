@@ -566,6 +566,7 @@ export interface ApiModuleModule extends Struct.CollectionTypeSchema {
 export interface ApiQuizOptionQuizOption extends Struct.CollectionTypeSchema {
   collectionName: 'quiz_options';
   info: {
+    description: '';
     displayName: 'Quiz Option';
     pluralName: 'quiz-options';
     singularName: 'quiz-option';
@@ -600,6 +601,7 @@ export interface ApiQuizQuestionQuizQuestion
   extends Struct.CollectionTypeSchema {
   collectionName: 'quiz_questions';
   info: {
+    description: '';
     displayName: 'Quiz Questions';
     pluralName: 'quiz-questions';
     singularName: 'quiz-question';
@@ -619,15 +621,13 @@ export interface ApiQuizQuestionQuizQuestion
       Schema.Attribute.Private;
     points: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
-    questionText: Schema.Attribute.Text;
-    questionType: Schema.Attribute.Enumeration<
-      ['single-choice', 'multiple-choice']
-    >;
+    question: Schema.Attribute.String;
     quiz: Schema.Attribute.Relation<'manyToOne', 'api::quiz.quiz'>;
     quiz_options: Schema.Attribute.Relation<
       'oneToMany',
       'api::quiz-option.quiz-option'
     >;
+    type: Schema.Attribute.Enumeration<['single-choice', 'multiple-choice']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

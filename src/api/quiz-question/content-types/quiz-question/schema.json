@@ -4,16 +4,17 @@
   "info": {
     "singularName": "quiz-question",
     "pluralName": "quiz-questions",
-    "displayName": "Quiz Questions"
+    "displayName": "Quiz Questions",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "questionText": {
-      "type": "text"
+    "question": {
+      "type": "string"
     },
-    "questionType": {
+    "type": {
       "type": "enumeration",
       "enum": [
         "single-choice",

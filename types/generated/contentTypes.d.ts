@@ -451,7 +451,7 @@ export interface ApiFaqItemFaqItem extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     module: Schema.Attribute.Relation<'manyToOne', 'api::module.module'>;
     publishedAt: Schema.Attribute.DateTime;
-    questions: Schema.Attribute.Text;
+    question: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

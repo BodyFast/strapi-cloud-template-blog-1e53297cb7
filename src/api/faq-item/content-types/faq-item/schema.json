@@ -10,7 +10,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "questions": {
+    "question": {
       "type": "text"
     },
     "answer": {

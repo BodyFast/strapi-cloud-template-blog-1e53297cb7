@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "course_mains",
+  "info": {
+    "singularName": "course-main",
+    "pluralName": "course-mains",
+    "displayName": "Course Main",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "modules": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::module.module"
+    }
+  }
+}

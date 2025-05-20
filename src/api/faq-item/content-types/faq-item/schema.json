@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faq_items",
+  "info": {
+    "singularName": "faq-item",
+    "pluralName": "faq-items",
+    "displayName": "FAQ Item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "questions": {
+      "type": "text"
+    },
+    "answer": {
+      "type": "blocks"
+    },
+    "module": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::module.module",
+      "inversedBy": "faq_items"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quiz_questions",
+  "info": {
+    "singularName": "quiz-question",
+    "pluralName": "quiz-questions",
+    "displayName": "Quiz Questions"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "questionText": {
+      "type": "text"
+    },
+    "questionType": {
+      "type": "enumeration",
+      "enum": [
+        "single-choice",
+        "multiple-choice"
+      ]
+    },
+    "points": {
+      "type": "integer"
+    },
+    "quiz": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quiz.quiz",
+      "inversedBy": "quiz_questions"
+    },
+    "quiz_options": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::quiz-option.quiz-option",
+      "mappedBy": "quiz_question"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quiz_options",
+  "info": {
+    "singularName": "quiz-option",
+    "pluralName": "quiz-options",
+    "displayName": "Quiz Option"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "isCorrect": {
+      "type": "boolean",
+      "default": false
+    },
+    "quiz_question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quiz-question.quiz-question",
+      "inversedBy": "quiz_options"
+    }
+  }
+}

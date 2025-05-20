@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "modules",
+  "info": {
+    "singularName": "module",
+    "pluralName": "modules",
+    "displayName": "Module",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "lessons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lesson.lesson",
+      "mappedBy": "module"
+    },
+    "recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "module"
+    },
+    "quiz": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::quiz.quiz",
+      "mappedBy": "module"
+    },
+    "faq_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq-item.faq-item",
+      "mappedBy": "module"
+    },
+    "worksheets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::worksheet.worksheet",
+      "mappedBy": "module"
+    }
+  }
+}

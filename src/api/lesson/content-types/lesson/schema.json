@@ -1,17 +1,42 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "lessons",
   "info": {
     "singularName": "lesson",
     "pluralName": "lessons",
-    "displayName": "Lesson"
+    "displayName": "Lesson",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "lessoncontent": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
       "type": "blocks"
+    },
+    "lessonType": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "video",
+        "quizRef"
+      ],
+      "default": "text"
+    },
+    "videoUrl": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "module": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::module.module",
+      "inversedBy": "lessons"
     }
   }
 }

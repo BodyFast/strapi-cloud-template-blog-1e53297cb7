@@ -516,8 +516,7 @@ export interface ApiLessonLesson extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     module: Schema.Attribute.Relation<'manyToOne', 'api::module.module'>;
-    optionalLesson: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<false>;
+    optionalLesson: Schema.Attribute.Boolean;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;

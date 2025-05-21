@@ -39,8 +39,7 @@
       "inversedBy": "lessons"
     },
     "optionalLesson": {
-      "type": "boolean",
-      "default": false
+      "type": "boolean"
     }
   }
 }

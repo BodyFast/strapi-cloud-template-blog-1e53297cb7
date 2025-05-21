@@ -37,6 +37,10 @@
       "relation": "manyToOne",
       "target": "api::module.module",
       "inversedBy": "lessons"
+    },
+    "optionalLesson": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

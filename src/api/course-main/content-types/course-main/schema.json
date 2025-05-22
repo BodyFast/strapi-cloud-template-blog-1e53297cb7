@@ -18,6 +18,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::module.module"
+    },
+    "introduction": {
+      "type": "blocks"
+    },
+    "conclusion": {
+      "type": "blocks"
     }
   }
 }

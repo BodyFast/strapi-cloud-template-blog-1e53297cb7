@@ -50,6 +50,11 @@
     "unlockAfterDays": {
       "type": "integer",
       "default": 7
+    },
+    "firebaseKey": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }

@@ -40,6 +40,11 @@
     },
     "optionalLesson": {
       "type": "boolean"
+    },
+    "firebaseKey": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }

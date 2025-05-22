@@ -410,9 +410,11 @@ export interface ApiCourseMainCourseMain extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    conclusion: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    introduction: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -507,6 +509,9 @@ export interface ApiLessonLesson extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     duration: Schema.Attribute.Integer;
+    firebaseKey: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     lessonType: Schema.Attribute.Enumeration<['text', 'video', 'quizRef']> &
       Schema.Attribute.DefaultTo<'text'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -543,6 +548,9 @@ export interface ApiModuleModule extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Blocks;
     faq_items: Schema.Attribute.Relation<'oneToMany', 'api::faq-item.faq-item'>;
+    firebaseKey: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     lessons: Schema.Attribute.Relation<'oneToMany', 'api::lesson.lesson'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

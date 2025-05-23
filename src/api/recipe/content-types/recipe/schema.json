@@ -4,7 +4,8 @@
   "info": {
     "singularName": "recipe",
     "pluralName": "recipes",
-    "displayName": "Recipe"
+    "displayName": "Recipe",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,14 +24,15 @@
       "type": "blocks"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "preparationTimeMinutes": {
       "type": "integer"
@@ -46,6 +48,12 @@
       "relation": "manyToOne",
       "target": "api::module.module",
       "inversedBy": "recipes"
+    },
+    "firebaseKey": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "regex": "recipe-\\d+"
     }
   }
 }

@@ -678,6 +678,7 @@ export interface ApiQuizQuiz extends Struct.CollectionTypeSchema {
 export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
   collectionName: 'recipes';
   info: {
+    description: '';
     displayName: 'Recipe';
     pluralName: 'recipes';
     singularName: 'recipe';
@@ -691,6 +692,9 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    firebaseKey: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     ingredients: Schema.Attribute.Blocks;
     instructions: Schema.Attribute.Blocks;

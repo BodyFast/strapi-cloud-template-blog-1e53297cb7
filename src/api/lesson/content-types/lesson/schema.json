@@ -44,7 +44,8 @@
     "firebaseKey": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": true,
+      "regex": "lesson-\\d+-\\d+"
     }
   }
 }

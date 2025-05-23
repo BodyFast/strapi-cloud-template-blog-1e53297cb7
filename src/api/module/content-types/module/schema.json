@@ -54,7 +54,8 @@
     "firebaseKey": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": true,
+      "regex": "module-\\d+"
     }
   }
 }

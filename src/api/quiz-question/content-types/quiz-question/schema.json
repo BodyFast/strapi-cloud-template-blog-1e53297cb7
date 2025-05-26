@@ -4,7 +4,7 @@
   "info": {
     "singularName": "quiz-question",
     "pluralName": "quiz-questions",
-    "displayName": "Quiz Questions",
+    "displayName": "Quiz Question",
     "description": ""
   },
   "options": {
@@ -30,11 +30,10 @@
       "target": "api::quiz.quiz",
       "inversedBy": "quiz_questions"
     },
-    "quiz_options": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::quiz-option.quiz-option",
-      "mappedBy": "quiz_question"
+    "answerOptions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "quiz.quiz-answer-option"
     }
   }
 }

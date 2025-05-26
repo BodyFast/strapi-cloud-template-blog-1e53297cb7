@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_quiz_quiz_answer_options",
+  "info": {
+    "displayName": "Quiz Answer Option",
+    "icon": "lightbulb"
+  },
+  "options": {},
+  "attributes": {
+    "answer": {
+      "type": "text"
+    },
+    "isCorrect": {
+      "type": "boolean"
+    }
+  }
+}

@@ -573,46 +573,12 @@ export interface ApiModuleModule extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiQuizOptionQuizOption extends Struct.CollectionTypeSchema {
-  collectionName: 'quiz_options';
-  info: {
-    description: '';
-    displayName: 'Quiz Option';
-    pluralName: 'quiz-options';
-    singularName: 'quiz-option';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    isCorrect: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::quiz-option.quiz-option'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    quiz_question: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::quiz-question.quiz-question'
-    >;
-    text: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiQuizQuestionQuizQuestion
   extends Struct.CollectionTypeSchema {
   collectionName: 'quiz_questions';
   info: {
     description: '';
-    displayName: 'Quiz Questions';
+    displayName: 'Quiz Question';
     pluralName: 'quiz-questions';
     singularName: 'quiz-question';
   };
@@ -620,6 +586,7 @@ export interface ApiQuizQuestionQuizQuestion
     draftAndPublish: true;
   };
   attributes: {
+    answerOptions: Schema.Attribute.Component<'quiz.quiz-answer-option', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -633,10 +600,6 @@ export interface ApiQuizQuestionQuizQuestion
     publishedAt: Schema.Attribute.DateTime;
     question: Schema.Attribute.String;
     quiz: Schema.Attribute.Relation<'manyToOne', 'api::quiz.quiz'>;
-    quiz_options: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::quiz-option.quiz-option'
-    >;
     type: Schema.Attribute.Enumeration<['single-choice', 'multiple-choice']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1262,7 +1225,6 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::lesson.lesson': ApiLessonLesson;
       'api::module.module': ApiModuleModule;
-      'api::quiz-option.quiz-option': ApiQuizOptionQuizOption;
       'api::quiz-question.quiz-question': ApiQuizQuestionQuizQuestion;
       'api::quiz.quiz': ApiQuizQuiz;
       'api::recipe.recipe': ApiRecipeRecipe;

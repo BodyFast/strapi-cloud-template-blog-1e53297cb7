@@ -433,6 +433,7 @@ export interface ApiCourseMainCourseMain extends Struct.SingleTypeSchema {
 export interface ApiFaqItemFaqItem extends Struct.CollectionTypeSchema {
   collectionName: 'faq_items';
   info: {
+    description: '';
     displayName: 'FAQ Item';
     pluralName: 'faq-items';
     singularName: 'faq-item';
@@ -453,7 +454,7 @@ export interface ApiFaqItemFaqItem extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     module: Schema.Attribute.Relation<'manyToOne', 'api::module.module'>;
     publishedAt: Schema.Attribute.DateTime;
-    question: Schema.Attribute.Text;
+    question: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

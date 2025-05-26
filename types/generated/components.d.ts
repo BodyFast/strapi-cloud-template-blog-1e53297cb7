@@ -3,11 +3,12 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface QuizQuizAnswerOption extends Struct.ComponentSchema {
   collectionName: 'components_quiz_quiz_answer_options';
   info: {
+    description: '';
     displayName: 'Quiz Answer Option';
     icon: 'lightbulb';
   };
   attributes: {
-    answer: Schema.Attribute.Text;
+    answer: Schema.Attribute.String;
     isCorrect: Schema.Attribute.Boolean;
   };
 }

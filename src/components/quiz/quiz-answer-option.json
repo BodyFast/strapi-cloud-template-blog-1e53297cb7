@@ -2,12 +2,13 @@
   "collectionName": "components_quiz_quiz_answer_options",
   "info": {
     "displayName": "Quiz Answer Option",
-    "icon": "lightbulb"
+    "icon": "lightbulb",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "answer": {
-      "type": "text"
+      "type": "string"
     },
     "isCorrect": {
       "type": "boolean"

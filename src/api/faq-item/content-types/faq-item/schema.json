@@ -4,14 +4,15 @@
   "info": {
     "singularName": "faq-item",
     "pluralName": "faq-items",
-    "displayName": "FAQ Item"
+    "displayName": "FAQ Item",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
     "question": {
-      "type": "text"
+      "type": "string"
     },
     "answer": {
       "type": "blocks"

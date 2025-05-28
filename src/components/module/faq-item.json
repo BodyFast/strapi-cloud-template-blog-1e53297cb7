@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_module_faq_items",
+  "info": {
+    "displayName": "FAQ Item",
+    "icon": "lightbulb"
+  },
+  "options": {},
+  "attributes": {
+    "Question": {
+      "type": "string",
+      "required": false
+    },
+    "Answer": {
+      "type": "text"
+    }
+  }
+}

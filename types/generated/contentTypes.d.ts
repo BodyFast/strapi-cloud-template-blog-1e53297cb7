@@ -430,37 +430,6 @@ export interface ApiCourseMainCourseMain extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiFaqItemFaqItem extends Struct.CollectionTypeSchema {
-  collectionName: 'faq_items';
-  info: {
-    description: '';
-    displayName: 'FAQ Item';
-    pluralName: 'faq-items';
-    singularName: 'faq-item';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    answer: Schema.Attribute.Blocks;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::faq-item.faq-item'
-    > &
-      Schema.Attribute.Private;
-    module: Schema.Attribute.Relation<'manyToOne', 'api::module.module'>;
-    publishedAt: Schema.Attribute.DateTime;
-    question: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -548,7 +517,7 @@ export interface ApiModuleModule extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Blocks;
-    faq_items: Schema.Attribute.Relation<'oneToMany', 'api::faq-item.faq-item'>;
+    faq: Schema.Attribute.Component<'module.faq-item', true>;
     firebaseKey: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -1222,7 +1191,6 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
       'api::course-main.course-main': ApiCourseMainCourseMain;
-      'api::faq-item.faq-item': ApiFaqItemFaqItem;
       'api::global.global': ApiGlobalGlobal;
       'api::lesson.lesson': ApiLessonLesson;
       'api::module.module': ApiModuleModule;

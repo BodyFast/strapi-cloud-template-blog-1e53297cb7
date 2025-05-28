@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ModuleFaqItem extends Struct.ComponentSchema {
+  collectionName: 'components_module_faq_items';
+  info: {
+    displayName: 'FAQ Item';
+    icon: 'lightbulb';
+  };
+  attributes: {
+    Answer: Schema.Attribute.Text;
+    Question: Schema.Attribute.String;
+  };
+}
+
 export interface QuizQuizAnswerOption extends Struct.ComponentSchema {
   collectionName: 'components_quiz_quiz_answer_options';
   info: {
@@ -78,6 +90,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'module.faq-item': ModuleFaqItem;
       'quiz.quiz-answer-option': QuizQuizAnswerOption;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

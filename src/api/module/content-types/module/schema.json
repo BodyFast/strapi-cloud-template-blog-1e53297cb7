@@ -35,12 +35,6 @@
       "target": "api::quiz.quiz",
       "mappedBy": "module"
     },
-    "faq_items": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::faq-item.faq-item",
-      "mappedBy": "module"
-    },
     "worksheets": {
       "type": "relation",
       "relation": "oneToMany",
@@ -56,6 +50,11 @@
       "required": true,
       "unique": true,
       "regex": "module-\\d+"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": true,
+      "component": "module.faq-item"
     }
   }
 }

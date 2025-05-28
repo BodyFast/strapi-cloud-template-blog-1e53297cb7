@@ -3,12 +3,13 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface ModuleFaqItem extends Struct.ComponentSchema {
   collectionName: 'components_module_faq_items';
   info: {
+    description: '';
     displayName: 'FAQ Item';
     icon: 'lightbulb';
   };
   attributes: {
-    Answer: Schema.Attribute.Text;
-    Question: Schema.Attribute.String;
+    answer: Schema.Attribute.Text;
+    question: Schema.Attribute.String;
   };
 }
 
